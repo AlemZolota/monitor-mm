@@ -9,7 +9,7 @@ import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
 export class AppComponent implements OnInit {
   title = 'Money Manager Monitoring';
 
-  constructor() {}
+  constructor() { }
 
   ngOnInit() {
   }

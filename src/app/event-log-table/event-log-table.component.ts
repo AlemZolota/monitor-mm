@@ -1,19 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from 'angularfire2/firestore';
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/map';
 import { DataSource } from '@angular/cdk/collections';
-
-export interface EventLog {
-  _eventLogUuid: string;
-  _evlCreatedDatetime: string;
-  _evlCustomMessage: string;
-  _evlDefaultMessage: string;
-  _evlFunction: string;
-  _evlLogLevel: number;
-  _evlStackTrace: string;
-  _evlUserUuid: string;
-}
+import { EventLogFirestoreServiceService } from '../event-log-firestore.service';
 
 @Component({
   selector: 'app-event-log-table',
@@ -22,31 +9,24 @@ export interface EventLog {
 })
 export class EventLogTableComponent implements OnInit {
 
-  eventLogCollection: AngularFirestoreCollection<EventLog>;
-  eventLogs: Observable<EventLog[]>;
-
   displayedColumns = ['_eventLogUuid', '_evlCreatedDatetime', '_evlCustomMessage',
-  '_evlDefaultMessage', '_evlFunction', '_evlLogLevel', '_evlStackTrace', '_evlUserUuid'];
+    '_evlDefaultMessage', '_evlFunction', '_evlLogLevel', '_evlStackTrace', '_evlUserUuid'];
   dataSource;
 
-  constructor(private afs: AngularFirestore) {}
+  constructor(private eventLogService: EventLogFirestoreServiceService) { }
 
   ngOnInit() {
-    this.eventLogCollection = this.afs.collection('colEventLog');
-    this.eventLogs = this.eventLogCollection.valueChanges();
-    this.dataSource = new EventLogDataSource(this);
+    this.dataSource = new EventLogDataSource(this.eventLogService);
   }
 }
 
 export class EventLogDataSource extends DataSource<any> {
 
-  constructor(private eventLogHolder: EventLogTableComponent) {
+  constructor(private eventLogService: EventLogFirestoreServiceService) {
     super();
   }
   connect() {
-    return this.eventLogHolder.eventLogs;
+    return this.eventLogService.getEventLogs();
   }
-  disconnect() {
-
-  }
+  disconnect() { }
 }
