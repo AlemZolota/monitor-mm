@@ -4,5 +4,14 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
-  production: false
+  production: false,
+
+  firebaseConfig: {
+    apiKey: 'AIzaSyARYq7HmPECiT4l3iBPGqFhOEBYVCYgXUA',
+    authDomain: 'allz-moneymanager.firebaseapp.com',
+    databaseURL: 'https://allz-moneymanager.firebaseio.com',
+    projectId: 'allz-moneymanager',
+    storageBucket: '',
+    messagingSenderId: '23965545330'
+  }
 };
