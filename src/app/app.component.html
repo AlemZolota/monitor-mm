@@ -1,68 +1,7 @@
-<!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
   <h1>
     {{ title }}
   </h1>
   <!-- img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==" -->
 </div>
-<!-- div *ngFor="let eventLog of eventLogs | async">
-  <h3>{{ eventLog | json }}</h3>
-</div -->
-<div class="example-container mat-elevation-z8">
-  <mat-table #table [dataSource]="dataSource">
-
-    <!--- Note that these columns can be defined in any order.
-          The actual rendered columns are set as a property on the row definition" -->
-
-    <!-- _eventLogUuid Column -->
-    <ng-container matColumnDef="_eventLogUuid">
-      <mat-header-cell *matHeaderCellDef> Uuid </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element._eventLogUuid}} </mat-cell>
-    </ng-container>
-
-    <!-- _evlCreatedDatetime Column -->
-    <ng-container matColumnDef="_evlCreatedDatetime">
-      <mat-header-cell *matHeaderCellDef> Created Datetime </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element._evlCreatedDatetime}} </mat-cell>
-    </ng-container>
-
-    <!-- _evlCustomMessage Column -->
-    <ng-container matColumnDef="_evlCustomMessage">
-      <mat-header-cell *matHeaderCellDef> Custom Message </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element._evlCustomMessage}} </mat-cell>
-    </ng-container>
-
-    <!-- _evlDefaultMessage Column -->
-    <ng-container matColumnDef="_evlDefaultMessage">
-      <mat-header-cell *matHeaderCellDef> Default Message </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element._evlDefaultMessage}} </mat-cell>
-    </ng-container>
-
-    <!-- _evlFunction Column -->
-    <ng-container matColumnDef="_evlFunction">
-      <mat-header-cell *matHeaderCellDef> Function </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element._evlFunction}} </mat-cell>
-    </ng-container>
-
-    <!-- _evlLogLevel Column -->
-    <ng-container matColumnDef="_evlLogLevel">
-      <mat-header-cell *matHeaderCellDef> LogLevel </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element._evlLogLevel}} </mat-cell>
-    </ng-container>
-
-    <!-- _evlStackTrace Column -->
-    <ng-container matColumnDef="_evlStackTrace">
-      <mat-header-cell *matHeaderCellDef> StackTrace </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element._evlStackTrace}} </mat-cell>
-    </ng-container>
-
-    <!-- _evlUserUuid Column -->
-    <ng-container matColumnDef="_evlUserUuid">
-      <mat-header-cell *matHeaderCellDef> UserUuid </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element._evlUserUuid}} </mat-cell>
-    </ng-container>
-
-    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-  </mat-table>
-</div>
+<app-event-log-table></app-event-log-table>

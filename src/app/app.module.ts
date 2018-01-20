@@ -12,11 +12,13 @@ export const firebaseConfig = environment.firebaseConfig;
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 
 import { MatTableModule } from '@angular/material/table';
+import { EventLogTableComponent } from './event-log-table/event-log-table.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    EventLogTableComponent
   ],
   imports: [
     BrowserModule,
