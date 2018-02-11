@@ -5,7 +5,7 @@ import 'rxjs/add/operator/map';
 import { EventLog } from './event-log';
 
 @Injectable()
-export class EventLogFirestoreServiceService {
+export class EventLogFirestoreService {
 
 
   eventLogCollection: AngularFirestoreCollection<EventLog>;

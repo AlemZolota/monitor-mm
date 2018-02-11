@@ -1,15 +1,15 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { EventLogFirestoreServiceService } from './event-log-firestore.service';
+import { EventLogFirestoreService } from './event-log-firestore.service';
 
-describe('EventLogFirestoreServiceService', () => {
+describe('EventLogFirestoreService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [EventLogFirestoreServiceService]
+      providers: [EventLogFirestoreService]
     });
   });
 
-  it('should be created', inject([EventLogFirestoreServiceService], (service: EventLogFirestoreServiceService) => {
+  it('should be created', inject([EventLogFirestoreService], (service: EventLogFirestoreService) => {
     expect(service).toBeTruthy();
   }));
 });

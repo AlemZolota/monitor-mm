@@ -1,0 +1,19 @@
+<div class="app-content">
+  <div class="login-container">
+    <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="User" id="user" required [(ngModel)]="user" name="user">
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="Password" id="pwd" required [(ngModel)]="pwd" name="pwd" [type]="hide ? 'password' : 'text'">
+        </mat-form-field>
+      </div>
+      <div>
+        <button type="submit" mat-raised-button class="btn btn-default" [disabled]="!loginForm.form.valid">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>

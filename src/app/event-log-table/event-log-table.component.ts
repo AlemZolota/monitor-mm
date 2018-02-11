@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataSource } from '@angular/cdk/collections';
-import { EventLogFirestoreServiceService } from '../event-log-firestore.service';
+import { EventLogFirestoreService } from '../event-log-firestore.service';
 
 @Component({
   selector: 'app-event-log-table',
@@ -13,7 +13,7 @@ export class EventLogTableComponent implements OnInit {
     '_evlDefaultMessage', '_evlFunction', '_evlLogLevel', '_evlStackTrace', '_evlUserUuid'];
   dataSource;
 
-  constructor(private eventLogService: EventLogFirestoreServiceService) { }
+  constructor(private eventLogService: EventLogFirestoreService) { }
 
   ngOnInit() {
     this.dataSource = new EventLogDataSource(this.eventLogService);
@@ -22,7 +22,7 @@ export class EventLogTableComponent implements OnInit {
 
 export class EventLogDataSource extends DataSource<any> {
 
-  constructor(private eventLogService: EventLogFirestoreServiceService) {
+  constructor(private eventLogService: EventLogFirestoreService) {
     super();
   }
   connect() {
